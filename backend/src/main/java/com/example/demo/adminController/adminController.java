@@ -21,23 +21,15 @@ public class adminController {
 	
 	@Autowired
 	private adminRepository repo;
-	private AuthenticationManager authenticationManager;
 
-	//login
-	@CrossOrigin(origins = "http://localhost:4200")
-	@GetMapping("/admin")
-	public ResponseEntity<String> login(@RequestBody loginRequest loginRequest) {
-		Authentication authentication = aunthenticationManager.authenticate;
-	}
 
 	
 	//get all
-	/*
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/admin")
 	public List <adminModel> getAllAdmins(){
 		return repo.findAll();
-	}*/
+	}
 
 	//get admin by id
 	@CrossOrigin(origins = "http://localhost:4200")
@@ -48,12 +40,12 @@ public class adminController {
 		return ResponseEntity.ok(admin);
 	}
 
-	//Get admin with matching username and password
-	@CrossOrigin(origins = "http://localhost:4200")
-	@PostMapping("/admin")
-	public adminModel login(@RequestBody adminModel admin) {
-		return repo.save(admin);
-	}
+//	//Get admin with matching username and password
+//	@CrossOrigin(origins = "http://localhost:4200")
+//	@PostMapping("/admin")
+//	public adminModel login(@RequestBody adminModel admin) {
+//		return repo.save(admin);
+//	}
 
 
 
