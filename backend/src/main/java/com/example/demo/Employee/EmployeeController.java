@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.Employee;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.exception.ResourceNotFoundException;
-import com.example.demo.model.Employee;
-import com.example.demo.repository.EmployeeRepository;
+import exception.ResourceNotFoundException;
 
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +28,7 @@ public class EmployeeController {
 	//get all data
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/employees")
-	public List <Employee> getAllEmployees(){
+	public List <EmployeeModel> getAllEmployees(){
 		return employeeRepository.findAll();
 	}  
 	
@@ -39,41 +37,41 @@ public class EmployeeController {
 	//create 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/employees")
-	public Employee createEmployee(@RequestBody Employee employee)
+	public EmployeeModel createEmployee(@RequestBody EmployeeModel employeeModel)
 	{
-		return employeeRepository.save(employee);
+		return employeeRepository.save(employeeModel);
 	}
 	
 	
 	// get data by id 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/employees/{id}")
-	public ResponseEntity<Employee> getByID(@PathVariable Long id) {
-		Employee employee = employeeRepository.findById(id).
+	public ResponseEntity<EmployeeModel> getByID(@PathVariable Long id) {
+		EmployeeModel employeeModel = employeeRepository.findById(id).
 				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
-		return ResponseEntity.ok(employee);
+		return ResponseEntity.ok(employeeModel);
 	}
 	
 	
 	//update data 
 	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping ("/employees/{id}")
-	public ResponseEntity<Employee> updateEmployeeByID(@PathVariable Long id, @RequestBody Employee employeeDetails){
-		Employee employee = employeeRepository.findById(id).
+	public ResponseEntity<EmployeeModel> updateEmployeeByID(@PathVariable Long id, @RequestBody EmployeeModel employeeModelDetails){
+		EmployeeModel employeeModel = employeeRepository.findById(id).
 				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
 		
 		
-		employee.setFname(employeeDetails.getFname());
-		employee.setLname(employeeDetails.getLname());
-		employee.setEmail(employeeDetails.getEmail());
-		employee.setDepartment(employeeDetails.getDepartment());
-		employee.setDesignation(employeeDetails.getDesignation());
-		employee.setJoiningDate(employeeDetails.getJoiningDate());
-		employee.setSalary(employeeDetails.getSalary());
+		employeeModel.setFname(employeeModelDetails.getFname());
+		employeeModel.setLname(employeeModelDetails.getLname());
+		employeeModel.setEmail(employeeModelDetails.getEmail());
+		employeeModel.setDepartment(employeeModelDetails.getDepartment());
+		employeeModel.setDesignation(employeeModelDetails.getDesignation());
+		employeeModel.setJoiningDate(employeeModelDetails.getJoiningDate());
+		employeeModel.setSalary(employeeModelDetails.getSalary());
 		
-		Employee updatedEmployee=employeeRepository.save(employee);
+		EmployeeModel updatedEmployeeModel =employeeRepository.save(employeeModel);
 		
-		return ResponseEntity.ok(updatedEmployee);
+		return ResponseEntity.ok(updatedEmployeeModel);
 }
 	
 	
@@ -83,10 +81,10 @@ public class EmployeeController {
 	public ResponseEntity <Map<String, Boolean> >deleteEmployee(@PathVariable Long id){
 		
 		
-		Employee employee = employeeRepository.findById(id).
+		EmployeeModel employeeModel = employeeRepository.findById(id).
 				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
 		
-		employeeRepository.delete(employee);
+		employeeRepository.delete(employeeModel);
 		
 		Map<String, Boolean>  response = new HashMap<>();
 		response.put("Deleted", Boolean.TRUE);

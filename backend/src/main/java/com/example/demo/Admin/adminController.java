@@ -1,17 +1,11 @@
-package com.example.demo.adminController;
+package com.example.demo.Admin;
 
 import java.util.List;
 
-import com.example.demo.exception.ResourceNotFoundException;
-import org.apache.coyote.Response;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.example.demo.adminModel.adminModel;
-import com.example.demo.adminRepository.adminRepository;
 
 
 @RestController

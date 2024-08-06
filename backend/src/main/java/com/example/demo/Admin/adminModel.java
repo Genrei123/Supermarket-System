@@ -1,4 +1,4 @@
-package com.example.demo.adminModel;
+package com.example.demo.Admin;
 
 
 

@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.Employee;
 import java.time.LocalDate;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,13 +11,13 @@ import jakarta.persistence.Column;
 
 @Entity 
 @Table(name="employees_table")
-public class Employee {
+public class EmployeeModel {
 
 	
-	public Employee() {}
+	public EmployeeModel() {}
 	
-	public Employee(String fname, String lname, String email, long salary, String department, String designation,
-			LocalDate joiningDate) {
+	public EmployeeModel(String fname, String lname, String email, long salary, String department, String designation,
+						 LocalDate joiningDate) {
 		super();
 		this.fname = fname;
 		this.lname = lname;
