@@ -12,9 +12,7 @@ import java.io.IOException;
 @CrossOrigin(origins = "http://localhost:4200")
 public class EmpBackendApplication {
 
-	public static void main(String[] args) throws IOException {
-		ReceiptMaker receiptMaker = new ReceiptMaker();
-		receiptMaker.generateReceipt("TEST1");
+	public static void main(String[] args) {
 		SpringApplication.run(EmpBackendApplication.class, args);
 	}
 
