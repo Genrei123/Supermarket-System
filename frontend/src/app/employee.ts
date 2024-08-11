@@ -2,13 +2,11 @@ import { DatePipe } from '@angular/common';
 
 export class Employee {
     id!: number;
-    fname!: string;
-    lname!: string;;
-    email!: string;;
-    salary!: number;
-    department: string;
-    designation:string;
-    joiningDate!: string;
+    title!: string;
+    description!: string;;
+    price!: string;;
+    quantity!: number;
+    image!: string;
   
     
    
@@ -16,10 +14,10 @@ export class Employee {
     // this.id = 0; 
     // // this.fname="";
     // this.lname="";
-    this.email="@gmail.com";
-    this.salary=0;
-    this.department="";
-    this.designation="";
+    //this.email="@gmail.com";
+    //this.salary=0;
+    //this.department="";
+    //this.designation="";
     // this.joiningDate = new Date();
   //  // Set the default date value
   //  const today = new Date();
