@@ -21,7 +21,7 @@
 
     <thead class="table-dark ">
         <tr>
-            <th>Item</th>
+            <th></th>
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
@@ -38,12 +38,12 @@
     <tbody>
         <tr *ngFor = "let employee of employees">
             <td>{{employee.id}}</td>
-            <td>{{employee.fname}}</td>
-            <td>{{employee.lname}}</td>
-            <td>{{employee.email}}</td>
+            <td>{{employee.description}}</td>
+            <td>{{employee.title}}</td>
+            <td>{{employee.image}}</td> 
             <!-- <td>{{employee.salary}}</td> -->
-            <td>{{employee.department}}</td>
-            <td>{{employee.designation}}</td>
+            <!-- <td>{{employee.department}}</td>
+            <td>{{employee.designation}}</td> -->
             <!-- <td>{{employee.joiningDate}}</td> -->
             <td>
                 <button (click) = "updateEmployee(employee.id)" class = "btn  btn-secondary btn-sm"> Update</button>
