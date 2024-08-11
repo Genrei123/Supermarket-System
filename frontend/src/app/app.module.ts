@@ -21,6 +21,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -40,7 +41,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     HttpClientModule,FormsModule,HomeComponent, BrowserAnimationsModule , 
     MatFormFieldModule, MatInputModule,MatFormFieldModule, MatInputModule, MatDatepickerModule,
-     MatNativeDateModule
+     MatNativeDateModule, RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
