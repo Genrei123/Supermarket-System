@@ -10,28 +10,36 @@ import jakarta.persistence.Column;
 
 
 @Entity 
-@Table(name="employee")
+@Table(name="items")
 public class itemModel {
 
 	
 	public itemModel() {}
 	
-	public itemModel(String desc, String title, Float price, int quantity) {
+	public itemModel(long id, String desc, String title, Float price, int quantity, String image) {
 		super();
+		this.id = id;
 		this.desc = desc;
 		this.title = title;
 		this.price = price;
 		this.quantity = quantity;
+		this.image = image;
 	}
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	@Column(name = "description")
 	private String desc;
+	@Column(name = "title")
 	private String title;
+	@Column(name = "price")
 	private Float price;
+	@Column(name = "quantity")
 	private int quantity;
+	@Column(name = "image")
+	private String image;
 
 	public long getId() {
 		return id;
@@ -62,5 +70,11 @@ public class itemModel {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
 	}
 }
