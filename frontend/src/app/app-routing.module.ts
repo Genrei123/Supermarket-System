@@ -6,6 +6,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { CartComponent } from './cart/cart.component';
 import { AuthGuard } from './_auth/auth.guard';
 import { RegisterComponent } from './register/register.component';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
   {path:'register',component:RegisterComponent}
+  {path:'cart',component:CartComponent},
 ];
 
 @NgModule({
