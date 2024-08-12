@@ -1,61 +1,74 @@
-<br>
-<br>
-<!-- <h1>Employee List</h1> -->
-
 <div class="container">
+    <div class="filter-section">
+        <br>
+        <h2>Filter</h2>
+        <div class="filter-option">Vegetables</div>
+        <div class="filter-option">Canned Goods</div>
+        <div class="filter-option">Condiments</div>
+        <div class="filter-option">Meat</div>
+        <div class="filter-option">Sea Food</div>
 
-    <div >
-        <form (ngSubmit)="goToEmployee()" >
-            <div class="form-group col-md-6 inline ">
-                
-                <input  [(ngModel)]="EnteredID" type="text" class="form-control" id="id" name="id" placeholder="Search by ID">
-                <button class="btn btn-secondary " type="submit">Search</button>
-            </div>
-        </form>
+
+        <br><br><br>
+        <h3>Rating</h3>
+        <div class="rating-option">5 Stars</div>
+        <div class="rating-option">4 Stars</div>
+        <div class="rating-option">3 Stars</div>
+        <div class="rating-option">2 Stars</div>
+        <div class="rating-option">1 Stars</div>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+          <img src="" alt="Ninja 1 Image" class="card-image">
+          <h5>Ninja 1</h5>
+          <p>Nig 1.</p>
+        </div>
+
+        <div class="card">
+            <h5>Ninja 2</h5>
+            <p>Nig 2.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
+        <div class="card">
+            <h5>Ninja 3</h5>
+            <p>Nig 3.</p>
+        </div>
 
     </div>
-    <br>
-    <br>
-<div>
-<table style="margin-bottom: 50px;" class=" table table-responsive table-striped  border-dark">
-
-    <thead class="table-dark ">
-        <tr>
-            <th></th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <!-- <th>Salary</th> -->
-            <th>Department</th>
-            <th>Designation</th>
-            <!-- <th>Joining Date</th> -->
-            <th>Actions</th>
-        </tr>
-
-    </thead> 
-
-
-    <tbody>
-        <tr *ngFor = "let employee of employees">
-            
-            <td>{{employee.id}}</td>
-            <td>{{employee.description}}</td>
-            <td>{{employee.title}}</td>
-            <td>{{employee.image}}</td> 
-            <!-- <td>{{employee.salary}}</td> -->
-            <!-- <td>{{employee.department}}</td>
-            <td>{{employee.designation}}</td> -->
-            <!-- <td>{{employee.joiningDate}}</td> -->
-            <td>
-                <button (click) = "updateEmployee(employee.id)" class = "btn  btn-secondary btn-sm"> Update</button>
-                <button (click) = "deleteEmployee(employee.id)" class = "btn btn-danger btn-sm" style="margin-left: 10px"> Delete</button>
-                <button (click) = "detailsOfEmployee(employee.id)" class = "btn btn-success btn-sm " style="margin-left: 10px"> View</button>
-            </td>
-        </tr>
-    </tbody>
-
-
-</table>
-<br><br><br><br>
 </div>
-
