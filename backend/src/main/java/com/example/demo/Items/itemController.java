@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1/")
 public class itemController {
 
 	@Autowired
@@ -42,7 +41,12 @@ public class itemController {
 		return result;
 	}
 	
-	
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PostMapping("/add")
+	public itemModel addItem(@RequestBody itemModel itemModel) {
+		System.out.println(itemModel);
+		return itemRepository.save(itemModel);
+	}
 	
 //	//create
 //	@CrossOrigin(origins = "http://localhost:4200")
