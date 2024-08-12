@@ -47,6 +47,41 @@ public class itemController {
 		System.out.println(itemModel);
 		return itemRepository.save(itemModel);
 	}
+
+	@CrossOrigin(origins = "http://localhost:4200")
+	@DeleteMapping("/items/{id}")
+	public ResponseEntity <Map<String, Boolean> >deleteEmployee(@PathVariable Long id) {
+
+		itemModel employee = itemRepository.findById(id).
+				orElseThrow(() -> new ResourceNotFoundException("Employee with id " + id + "does not exists"));
+
+		itemRepository.delete(employee);
+		Map<String, Boolean> response = new HashMap<>();
+		response.put("Deleted", Boolean.TRUE);
+		return ResponseEntity.ok(response);
+	}
+
+	//update data
+	@CrossOrigin(origins = "http://localhost:4200")
+	@PutMapping ("/items/{id}")
+	public ResponseEntity<itemModel> updateEmployeeByID(@PathVariable Long id, @RequestBody itemModel employeeDetails){
+		itemModel employee = itemRepository.findById(id).
+				orElseThrow(()-> new ResourceNotFoundException("Employee with id "+id+"does not exists"));
+
+		employee.setTitle(employeeDetails.getTitle());
+		employee.setDesc(employeeDetails.getDesc());
+		employee.setPrice(employeeDetails.getPrice());
+		employee.setQuantity(employeeDetails.getQuantity());
+		employee.setImage(employeeDetails.getImage());
+		
+		itemModel updatedEmployee= itemRepository.save(employee);
+
+		return ResponseEntity.ok(updatedEmployee);
+}
+
+
+
+
 	
 //	//create
 //	@CrossOrigin(origins = "http://localhost:4200")

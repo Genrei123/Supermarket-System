@@ -16,7 +16,8 @@
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
-          <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+          <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/register">Register</button>
+          <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()" routerLink="/login">Logout</button>
         </li>
       </ul>
     </div>
