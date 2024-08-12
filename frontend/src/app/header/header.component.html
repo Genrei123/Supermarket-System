@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-sm border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a routerLink="home" routerLinkActive="active" class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="show-all-employees" routerLinkActive="active" class="nav-link">Shop Now!</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="add-employee" routerLinkActive="active" class="nav-link"
+            *ngIf="userService.roleMatch(['Admin'])">Add Employee</a>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
+          <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
