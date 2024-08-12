@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'details-of-employee/:id',component:ShowDetailsComponent},
   {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
-  {path:'register',component:RegisterComponent}
+  {path:'register',component:RegisterComponent},
   {path:'cart',component:CartComponent},
 ];
 
