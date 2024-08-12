@@ -18,7 +18,7 @@ export class EmployeeListComponent {
   constructor(
     private employeeService: EmployeeService,  
     private router: Router,
-    private userService: UserService) {
+    public userService: UserService) {
     this.employees=[];
    
    }

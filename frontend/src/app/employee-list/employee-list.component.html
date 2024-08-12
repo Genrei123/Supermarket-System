@@ -1,4 +1,6 @@
 <div class="container">
+    
+
     <div class="filter-section">
         <br>
         <h2>Filter</h2>
@@ -25,6 +27,7 @@
           <p>{{employee.price}}</p>
           <p>{{employee.description}}</p>
           <button>Add to Cart</button>
+          <button *ngIf="userService.roleMatch(['Admin'])" (click) = "deleteEmployee(employee.id)">Delete</button>
         </div>
 
         
