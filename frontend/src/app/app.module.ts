@@ -35,7 +35,8 @@ import { CartComponent } from './cart/cart.component';
     AddEmployeeComponent,
          UpdateEmployeeComponent,
          ShowDetailsComponent,
-         AdminLoginComponent
+         AdminLoginComponent,
+         HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +46,7 @@ import { CartComponent } from './cart/cart.component';
     MatFormFieldModule, MatInputModule,MatFormFieldModule, MatInputModule, MatDatepickerModule,
      MatNativeDateModule, RouterModule
   ],
+  
   providers: [ {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true} ],
   bootstrap: [AppComponent]
 })
