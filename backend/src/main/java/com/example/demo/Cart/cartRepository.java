@@ -1,4 +1,6 @@
 package com.example.demo.Cart;
 
-public class cartRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface cartRepository extends CrudRepository<Integer, cartModel> {
 }
