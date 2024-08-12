@@ -21,6 +21,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -32,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddEmployeeComponent,
          UpdateEmployeeComponent,
          ShowDetailsComponent,
-         AdminLoginComponent
+         AdminLoginComponent,
+         CartComponent
   ],
   imports: [
     BrowserModule,

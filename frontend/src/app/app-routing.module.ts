@@ -6,6 +6,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { CartComponent } from './cart/cart.component';
 
   
 
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'updating-by-id/:id',component:UpdateEmployeeComponent},
   {path:'details-of-employee/:id',component:ShowDetailsComponent},
   {path:'home',component:HomeComponent},
-  {path:'login',component:AdminLoginComponent}
+  {path:'login',component:AdminLoginComponent},
+  {path:'cart',component:CartComponent}
 ];
 
 @NgModule({
