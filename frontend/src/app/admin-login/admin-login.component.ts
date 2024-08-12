@@ -1,29 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from '../_services/user.service';
+import { NgForm } from '@angular/forms';
+import { UserAuthService } from '../_services/user-auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
   templateUrl: './admin-login.component.html',
   styleUrls: ['./admin-login.component.css']
 })
-export class AdminLoginComponent {
+export class AdminLoginComponent implements OnInit{
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, 
+    private userAuthService: UserAuthService, 
+    private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     
   }
-  private baseURL = "http://localhost:8080/api/v1/admin";
 
-  public getAdmin(): void {
-    this.httpClient.get<any>(`${this.baseURL}/1`).subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log("this is an error" + error);
+  public login(loginForm: NgForm) {
+    this.userService.login(loginForm.value).subscribe({
+      
+      next: (response:any) => {
+
+        console.log("hello" + response.user.role);
+        
+        this.userAuthService.setRoles(response.user.role);
+        this.userAuthService.setToken(response.jwtToken);
+        
+        const role = response.user.role[0];
+        
+
+        console.log(response.roles);
+        if (role.roleName === 'Admin') {
+          this.router.navigate(['/show-all-employees']);
+
+        } else {
+          this.router.navigate(['/home']);
+        }
+      }, 
+      error: (error) =>{
+        console.log("wtf");
       }
-    );
+  });
+    
+
   }
 
   // public loginAdmin(): Observable<any> {
