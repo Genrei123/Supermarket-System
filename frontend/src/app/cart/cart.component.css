@@ -1,0 +1,39 @@
+.container1 {
+    width: 96%;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0px 0px 0px 12px;
+    margin: 2% 0% 0% 2%;
+    box-shadow: 5px 5px 8px #888888;
+}
+
+.container3 {
+    width: 96%;
+    border: 1px solid rgb(0, 0, 0);
+    padding: 0px 0px 0px 12px;
+    margin: 2% 0% 0% 2%;
+}
+
+input.Lcheckbox {
+    height: 15px;
+    width: 15px;
+}
+
+.column {
+    float: left;
+    width: 60%;
+    padding: 10px;
+    
+}
+  
+.column1 {
+    float: left;
+    width: 9.8%;
+    padding: 10px;
+    
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

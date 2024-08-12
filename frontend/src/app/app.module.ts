@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AuthInterceptor } from './_auth/auth.interceptor';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -32,10 +33,9 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
     AppComponent,
     EmployeeListComponent,
     AddEmployeeComponent,
-    UpdateEmployeeComponent,
-    ShowDetailsComponent,
-    AdminLoginComponent,
-    HeaderComponent
+         UpdateEmployeeComponent,
+         ShowDetailsComponent,
+         AdminLoginComponent
   ],
   imports: [
     BrowserModule,
