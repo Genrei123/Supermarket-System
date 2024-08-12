@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { EmployeeService } from '../employee.service';
 import { Router } from '@angular/router';
 import { FormsModule, NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -21,6 +22,7 @@ export class AddEmployeeComponent //implements OnInit//
   constructor(
     private employeeService: EmployeeService,
     private router: Router,
+    private http: HttpClient
 
   ) {
 
@@ -33,16 +35,13 @@ export class AddEmployeeComponent //implements OnInit//
  
 
   submitform!: NgForm;
-  private baseURL = "http://localhost:8080/api/v1/employees";
+  private baseURL = "http://localhost:8080/add";
   employee: Employee = new Employee();
   
 
-
-
-
   saveEmployee() {
     this.employeeService.addEmployee(this.employee).subscribe(data => {
-      console.log(data);
+      console.log("hello" + data);
       this.goToEmployeeList();
     },
       error => console.log(error));
@@ -53,11 +52,14 @@ export class AddEmployeeComponent //implements OnInit//
   }
 
   ngOnInit(): void { }
-  onSubmit() {
-    console.log(this.employee);
-
-
-    this.saveEmployee();
+  onSubmit( form: NgForm) {
+    if (form.valid) {
+      this.http.post(this.baseURL, form.value)
+      .subscribe((response) => {
+        console.log(response);
+        this.router.navigate(['/show-all-employees']);
+      });
+    }
   }
 
 
