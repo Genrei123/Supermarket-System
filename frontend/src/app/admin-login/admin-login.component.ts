@@ -25,7 +25,6 @@ export class AdminLoginComponent implements OnInit{
       
       next: (response:any) => {
 
-        console.log("hello" + response.user.role);
         
         this.userAuthService.setRoles(response.user.role);
         this.userAuthService.setToken(response.jwtToken);
@@ -33,9 +32,8 @@ export class AdminLoginComponent implements OnInit{
         const role = response.user.role[0];
         
 
-        console.log(response.roles);
         if (role.roleName === 'Admin') {
-          this.router.navigate(['/show-all-employees']);
+          this.router.navigate(['/add-employee']);
 
         } else {
           this.router.navigate(['/home']);

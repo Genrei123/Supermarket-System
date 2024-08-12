@@ -14,10 +14,10 @@ const routes: Routes = [
 
   {path:"show-all-employees",component: EmployeeListComponent, canActivate:[AuthGuard], data: {roles: ['User']}},
   {path:"add-employee", component: AddEmployeeComponent, canActivate:[AuthGuard], data: {roles: ['Admin']}},
-  {path:'', redirectTo: "home", pathMatch:"full"},
+  {path:'', redirectTo: "login", pathMatch:"full"},
   {path:'updating-by-id/:id',component:UpdateEmployeeComponent},
   {path:'details-of-employee/:id',component:ShowDetailsComponent},
-  {path:'home',component:HomeComponent, canActivate:[AuthGuard], data: {roles: ['User']}},
+  {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
 ];
 
