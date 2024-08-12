@@ -13,6 +13,14 @@
     font-size: 3rem;
 }
 
+.navbar-nav.ms-auto {
+    margin-left: auto !important;
+  }
+  
+  .navbar-nav.ms-auto .nav-item {
+    margin-left: 10px;
+  }
+
 
 
 
