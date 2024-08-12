@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'', redirectTo: "home", pathMatch:"full"},
   {path:'updating-by-id/:id',component:UpdateEmployeeComponent},
   {path:'details-of-employee/:id',component:ShowDetailsComponent},
-  {path:'home',component:HomeComponent, canActivate:[AuthGuard], data: {roles: ['User']}},
+  {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
 ];
 
