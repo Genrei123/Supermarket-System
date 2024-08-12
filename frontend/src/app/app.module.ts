@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -21,6 +21,9 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
+import { AuthInterceptor } from './_auth/auth.interceptor';
 
 
 
@@ -28,11 +31,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    
     AddEmployeeComponent,
-         UpdateEmployeeComponent,
-         ShowDetailsComponent,
-         AdminLoginComponent
+    UpdateEmployeeComponent,
+    ShowDetailsComponent,
+    AdminLoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +43,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     HttpClientModule,FormsModule,HomeComponent, BrowserAnimationsModule , 
     MatFormFieldModule, MatInputModule,MatFormFieldModule, MatInputModule, MatDatepickerModule,
-     MatNativeDateModule
+     MatNativeDateModule, RouterModule
   ],
-  providers: [],
+  providers: [ {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
