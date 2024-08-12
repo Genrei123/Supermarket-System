@@ -19,56 +19,15 @@
     </div>
 
     <div class="card-container">
-        <div class="card">
+        <div *ngFor = "let employee of employees" class="card">
           <img src="" alt="Ninja 1 Image" class="card-image">
-          <h5>Ninja 1</h5>
-          <p>Nig 1.</p>
+          <h5>{{employee.title}}</h5>
+          <p>{{employee.price}}</p>
+          <p>{{employee.description}}</p>
+          <button>Add to Cart</button>
         </div>
 
-        <div class="card">
-            <h5>Ninja 2</h5>
-            <p>Nig 2.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
-        <div class="card">
-            <h5>Ninja 3</h5>
-            <p>Nig 3.</p>
-        </div>
+        
 
     </div>
 </div>
