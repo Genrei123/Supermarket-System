@@ -11,11 +11,14 @@ export class UserAuthService {
   }
 
   public getRoles() {
-    if (JSON.parse(localStorage.getItem('roles') as string) === null) {
+    const roleString = localStorage.getItem('roles');
+    if (!roleString) {
       return null;
-    }
-    else {
-      return JSON.parse(localStorage.getItem('roles') as string);
+    } 
+    try {
+      return JSON.parse(roleString);
+    } catch (error) {
+      return null;
     }
   }
 

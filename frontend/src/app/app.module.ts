@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -29,11 +30,11 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    
     AddEmployeeComponent,
-         UpdateEmployeeComponent,
-         ShowDetailsComponent,
-         AdminLoginComponent
+    UpdateEmployeeComponent,
+    ShowDetailsComponent,
+    AdminLoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

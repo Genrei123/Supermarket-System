@@ -24,12 +24,17 @@ export class AdminLoginComponent implements OnInit{
     this.userService.login(loginForm.value).subscribe({
       
       next: (response:any) => {
-        this.userAuthService.setRoles(response.roles);
+
+        console.log("hello" + response.user.role);
+        
+        this.userAuthService.setRoles(response.user.role);
         this.userAuthService.setToken(response.jwtToken);
+        
+        const role = response.user.role[0];
+        
 
-        const role = response.user.role[0]
-
-        if (role === 'Admin') {
+        console.log(response.roles);
+        if (role.roleName === 'Admin') {
           this.router.navigate(['/show-all-employees']);
 
         } else {
