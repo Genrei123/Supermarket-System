@@ -2,7 +2,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #FFCB8F;
+    background-color: rgb(240, 238, 238);
 }
 
 .footer {
