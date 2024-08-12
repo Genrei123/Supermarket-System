@@ -1,54 +1,19 @@
-.container {
+.btn{
+    margin-right: 20px;
+    box-shadow: 10 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.inline{
     display: flex;
-    justify-content: space-between;
-    margin: 20px auto;
-    max-width: 1920px; /* Adjust as needed */
-    padding: 60px;
 }
 
-.filter-section {
-    width: 250px; /* Fixed width for the filter section */
-    height: 500px;
-    margin-top: 10px;
-    margin-right: 20px; /* Space between filter and cards */
-    padding: 20px;
-    background: #f5f5f5; /* Background color for the filter section */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.inline .btn{
+    margin-left: 1rem;
 }
 
-.card-container {
-    display: flex;
-    justify-content: flex-start; /* Align cards to the right */
-    flex-wrap: wrap;
-    gap: 10px; /* Space between cards */
-    flex: 1;
+input{
+    border: 1px solid #000000;
+    box-shadow: 10 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    height: 300px;
-    text-align: center;
-    margin: 10px;
-}
-
-.card-image { /* image dun sa mga cards */
-    width: 150px; 
-    height: 150px; 
-    object-fit: 0; /* idk what this do */
-    margin: 0 auto; /* Center the image horizontally */
-  }
-
-.card h5 {
-    margin-top: 20px;
-}
-
-.card p {
-    margin-bottom: 5px;
-}
-
