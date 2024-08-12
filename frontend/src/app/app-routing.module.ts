@@ -12,7 +12,7 @@ import { AuthGuard } from './_auth/auth.guard';
 
 const routes: Routes = [
 
-  {path:"show-all-employees",component: EmployeeListComponent, canActivate:[AuthGuard], data: {roles: ['User']}},
+  {path:"show-all-employees",component: EmployeeListComponent },
   {path:"add-employee", component: AddEmployeeComponent, canActivate:[AuthGuard], data: {roles: ['Admin']}},
   {path:'', redirectTo: "home", pathMatch:"full"},
   {path:'updating-by-id/:id',component:UpdateEmployeeComponent},
