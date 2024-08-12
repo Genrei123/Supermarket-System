@@ -1,0 +1,61 @@
+<div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="../assets/noBgLogin.png"
+          class="img-fluid" alt="Sample image">
+</div>
+
+<div class="col-md-8 col-lg-6 col-xl-4 offset-x1-1" style = "padding: 20px;">
+    <form #registerForm = "ngForm" (ngSubmit) = "register(registerForm)"> 
+      
+      <div class="form-outline mb-3">
+        <input type = "text"
+        ngModel
+        name = "userName"
+        id = "userName"
+        placeholder = "Enter your username"
+        class = "form-control"
+        >
+      </div>
+
+      <div class="form-outline mb-3">
+
+        <input type = "password"
+        ngModel
+        name = "userPassword"
+        id = "userPassword"
+        placeholder = "Enter your password"
+        class = "form-control"
+        >
+      </div>
+
+      <div class="form-outline mb-3">
+        <input type = "text"
+        ngModel
+        name = "userName"
+        id = "userName"
+        placeholder = "Enter your first name"
+        class = "form-control"
+        >
+      </div>
+
+      <div class="form-outline mb-3">
+        <input type = "text"
+        ngModel
+        name = "userName"
+        id = "userName"
+        placeholder = "Enter your last name"
+        class = "form-control"
+        >
+      </div>
+
+      <input type = "submit"
+      value="Register"
+      class = "btn btn-primary"
+      >
+
+      
+
+      
+
+    </form>

@@ -7,6 +7,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AuthGuard } from './_auth/auth.guard';
+import { RegisterComponent } from './register/register.component';
 
   
 
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:'details-of-employee/:id',component:ShowDetailsComponent},
   {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
+  {path:'register',component:RegisterComponent}
 ];
 
 @NgModule({

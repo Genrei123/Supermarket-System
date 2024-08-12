@@ -24,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AuthInterceptor } from './_auth/auth.interceptor';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -35,7 +36,8 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
     UpdateEmployeeComponent,
     ShowDetailsComponent,
     AdminLoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
