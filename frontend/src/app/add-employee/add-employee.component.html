@@ -48,7 +48,8 @@
 
             <div class="form-group col-md-3">
                 <label><b>Image</b></label>
-                <input type="file" accept = ".jpg, .png" class="form-control" id="image" [(ngModel)]="employee.image" name="image" required ngModel />
+                <input type="text"  class="form-control" id="image" [(ngModel)]="employee.image"
+                       name="image" required #fileInput>
             </div>
 
 

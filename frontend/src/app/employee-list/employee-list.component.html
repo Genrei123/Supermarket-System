@@ -20,7 +20,7 @@
 
     <div class="card-container">
         <div *ngFor = "let employee of employees" class="card">
-          <img src="" alt="Ninja 1 Image" class="card-image">
+          <img [src] = "employee.image" class="card-image">
           <h5>{{employee.title}}</h5>
           <p>{{employee.price}}</p>
           <p>{{employee.description}}</p>

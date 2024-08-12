@@ -12,31 +12,28 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-employee',
-  templateUrl: './add-employee.component.html'
-  ,
+  templateUrl: './add-employee.component.html',
   styleUrls: ['./add-employee.component.css']
 })
 export class AddEmployeeComponent //implements OnInit//
 {
+
+  selectedFileName: string = '';
+
+  
 
   constructor(
     private employeeService: EmployeeService,
     private router: Router,
     private http: HttpClient
 
-  ) {
-
-  }
-
-
-
-
- 
- 
+  ) {}
 
   submitform!: NgForm;
   private baseURL = "http://localhost:8080/add";
   employee: Employee = new Employee();
+
+  
   
 
   saveEmployee() {
@@ -62,7 +59,7 @@ export class AddEmployeeComponent //implements OnInit//
     }
   }
 
-
+  
 }
 
 
