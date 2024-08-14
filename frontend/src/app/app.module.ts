@@ -22,6 +22,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
@@ -34,7 +35,8 @@ import { CartComponent } from './cart/cart.component';
          UpdateEmployeeComponent,
          ShowDetailsComponent,
          AdminLoginComponent,
-         CartComponent
+         CartComponent,
+         CheckoutComponent
   ],
   imports: [
     BrowserModule,

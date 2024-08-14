@@ -7,6 +7,7 @@ import { ShowDetailsComponent } from './show-details/show-details.component';
 import { HomeComponent } from './home/home.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
   
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'details-of-employee/:id',component:ShowDetailsComponent},
   {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
-  {path:'cart',component:CartComponent}
+  {path:'cart',component:CartComponent},
+  {path:'checkout',component:CheckoutComponent}
 ];
 
 @NgModule({
