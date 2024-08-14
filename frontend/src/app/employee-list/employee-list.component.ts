@@ -4,6 +4,7 @@ import { EmployeeService } from '../employee.service';
 import{FormsModule} from '@angular/forms'
 
 import { Router } from '@angular/router';
+import { UserService } from '../_services/user.service';
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -14,7 +15,10 @@ export class EmployeeListComponent {
   employees: Employee[];
   EnteredID!:number;
 
-  constructor(private employeeService: EmployeeService,  private router: Router) {
+  constructor(
+    private employeeService: EmployeeService,  
+    private router: Router,
+    public userService: UserService) {
     this.employees=[];
    
    }
@@ -29,18 +33,24 @@ export class EmployeeListComponent {
     this.getEmployees();
   }
 
+  
+
 
   goToEmployee(){
-
-    
     console.log(this.EnteredID); 
     this.router.navigate(['details-of-employee',this.EnteredID]);
   }
 
   getEmployees(){
-    this.employeeService.getEmployeesList().subscribe(data => {this.employees = data;});
-
-    
+    // this.employeeService.getEmployeesList().subscribe(data => {this.employees = data;});
+    this.employeeService.getEmployeesList().subscribe({
+      next: (data) => {
+        this.employees = data;
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
   }
 
   updateEmployee(id: number){
@@ -52,7 +62,7 @@ export class EmployeeListComponent {
 
   deleteEmployee(id: number){
 
-    if(confirm("Are you sure to delete Employee ID: "+id)){
+    if(confirm("Are you sure to delete Product ID: "+id)){
     this.employeeService.deleteEmployee(id).subscribe( data => {
       console.log(data);
       this.getEmployees();
