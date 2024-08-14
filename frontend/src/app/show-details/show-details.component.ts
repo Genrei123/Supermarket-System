@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 import { ActivatedRoute } from '@angular/router';
+import { UserAuthService } from '../_services/user-auth.service';
 
 
 
@@ -16,7 +17,9 @@ export class ShowDetailsComponent {
   
   id: number
   employee!: Employee
-  constructor(private route: ActivatedRoute, private employeService: EmployeeService) { 
+  constructor(private route: ActivatedRoute, 
+    private employeService: EmployeeService,
+    public userAuthService: UserAuthService) { 
 
     this.id=0
   }

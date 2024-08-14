@@ -62,7 +62,7 @@ export class EmployeeListComponent {
 
   deleteEmployee(id: number){
 
-    if(confirm("Are you sure to delete Employee ID: "+id)){
+    if(confirm("Are you sure to delete Product ID: "+id)){
     this.employeeService.deleteEmployee(id).subscribe( data => {
       console.log(data);
       this.getEmployees();
