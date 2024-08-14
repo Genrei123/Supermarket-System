@@ -25,9 +25,12 @@ export class AdminLoginComponent implements OnInit{
       
       next: (response:any) => {
 
+        console.log(response);
+
         
         this.userAuthService.setRoles(response.user.role);
         this.userAuthService.setToken(response.jwtToken);
+        this.userAuthService.setUsername(response.user.userName);
         
         const role = response.user.role[0];
         

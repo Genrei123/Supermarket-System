@@ -18,7 +18,7 @@ const routes: Routes = [
   {path:"add-employee", component: AddEmployeeComponent, canActivate:[AuthGuard], data: {roles: ['Admin']}},
   {path:'', redirectTo: "login", pathMatch:"full"},
   {path:'updating-by-id/:id',component:UpdateEmployeeComponent, canActivate:[AuthGuard], data: {roles: ['Admin']}},
-  {path:'details-of-employee/:id',component:ShowDetailsComponent},
+  {path:'user/:id',component:ShowDetailsComponent},
   {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
   {path:'register',component:RegisterComponent},
