@@ -26,6 +26,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 
@@ -43,6 +44,8 @@ import { CartComponent } from './cart/cart.component';
     AdminLoginComponent,
     HeaderComponent,
     RegisterComponent
+         ,CartComponent,
+         CheckoutComponent
   ],
   imports: [
     BrowserModule,

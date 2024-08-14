@@ -8,6 +8,16 @@
     margin: 2% 0% 0% 2%;
 }
 
+.delivery_head {
+    width: 96%;
+    background: #fff;
+    border: 2px dashed #000000;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0px 0px 0px 12px;
+    margin: 0% 0% 0% 2%;
+}
+
 .container2 {
     width: 96%;
     background: #fff;
@@ -22,7 +32,7 @@
     width: 96%;
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
+
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 0px 0px 0px 12px;
     margin: 2% 0% 0% 2%;
@@ -58,6 +68,14 @@ input.Lcheckbox {
     padding: 10px;
 
 }
+
+.column2 {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    
+}
+
 
 .row:after {
     content: "";

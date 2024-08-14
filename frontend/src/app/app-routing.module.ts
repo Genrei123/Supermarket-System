@@ -9,6 +9,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { CartComponent } from './cart/cart.component';
 import { AuthGuard } from './_auth/auth.guard';
 import { RegisterComponent } from './register/register.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
   
 
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:AdminLoginComponent},
   {path:'register',component:RegisterComponent},
-  {path:'cart',component:CartComponent},
+  {path:'cart',component:CartComponent},,
+  {path:'checkout',component:CheckoutComponent}
 ];
 
 @NgModule({
