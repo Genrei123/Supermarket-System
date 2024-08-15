@@ -11,21 +11,34 @@
           <a routerLink="add-employee" routerLinkActive="active" class="nav-link"
             *ngIf="userService.roleMatch(['Admin'])">Add Product</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="cart" routerLinkActive="active" class="nav-link">Cart</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="checkout" routerLinkActive="active" class="nav-link">Checkout</a>
-        </li>
       </ul>
       
       <ul class="navbar-nav ms-auto">
+        <!-- <li class="nav-item">
+          <button *ngIf="isLoggedIn()" type="button" class="btn btn-success" routerLink="/checkout">Checkout</button>
+        </li> -->
+
+        <!-- <li class="nav-item">
+          <button *ngIf="isLoggedIn()" type="button" class="btn btn-success" routerLink="/checkout">Checkout</button>
+        </li> -->
+        
         <li class="nav-item">
           <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
+        </li>
+
+        <li class="nav-item">
           <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success" routerLink="/register">Register</button>
+        </li>
+
+        <li class="nav-item">
           <button *ngIf="isLoggedIn()" type="button" class="btn btn-primary" (click)="goToProfile()">Profile</button>
+        </li>
+
+        <li class="nav-item">
           <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()" routerLink="/login">Logout</button>
         </li>
       </ul>
+
+      
     </div>
   </nav>

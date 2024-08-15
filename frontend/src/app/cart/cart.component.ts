@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ItemService } from '../employee-list/items.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+
+  constructor(public itemService: ItemService) { }
+
+  ngOnInit(): void {
+  }
+
+ 
+
+
+
+  
 
 }

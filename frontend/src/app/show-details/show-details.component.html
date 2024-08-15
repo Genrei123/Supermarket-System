@@ -3,7 +3,7 @@
 
 <div class="container">
 
-<h3>Employee Details</h3>
+<h3>User Details</h3>
 <br>
 <div class="box">
 
@@ -30,18 +30,18 @@
     <tbody>
     <tr>
           <td><b>Username: </b></td>
-          <td>{{userAuthService.getUsername}}</td>
+          <td>{{userAuthService.getUsername()}}</td>
         </tr>
         <tr>
           <td><b>Role:</b></td>
-          <td>{{userAuthService.getRoles}}</td>
+          <td>{{userAuthService.getRole()}}</td>
         </tr>
 
     </tbody>
       </table>
 
-      <a routerLink="/updating-by-id/{{employee.id}}" id="btn1"class="btn btn-secondary">Update Details</a>
-      <a routerLink="/show-all-employees" id="btn2" class="btn btn-danger">Back</a>
+      <a routerLink="/updating-by-id/{{userAuthService.getUsername()}}" id="btn1"class="btn btn-secondary">Update Details</a>
+      <a routerLink="/home" id="btn2" class="btn btn-danger">Back</a>
 </div>
 
 </div>

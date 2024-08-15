@@ -22,16 +22,24 @@ export class UserAuthService {
     }
   }
 
+  public getRole() {
+    const roles = this.getRoles();
+    if (!roles) {
+      return null;
+    }
+    return roles[0].roleName;
+  }
+
   public setToken(jwtToken: string) {
     localStorage.setItem('jwtToken', jwtToken);
   }
 
   public getToken(): string {
-    return localStorage.getItem('jwtToken') as string;
+    return localStorage.getItem('jwtToken');
   }
 
-  public getUsername(): any {
-    return localStorage.getItem('username') as string;
+  public getUsername(): string {
+    return localStorage.getItem('username');
   }
 
   public setUsername(username: string) {

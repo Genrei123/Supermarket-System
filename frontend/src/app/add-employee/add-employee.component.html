@@ -3,22 +3,21 @@
 <!-- <a routerLink="/show-all-employees" class="btn btn-primary">Go somewhere</a> -->
 <div class="container-sm">
     <div class="col-md-6 offset-md-3  container-sm ">
-        <form #addItem = "ngForm" (ngSubmit) = "onSubmit(addItem)" class="row g-3 form-container  container-sm">
+        <form #addItem="ngForm" (ngSubmit) = "onSubmit(addItem)" class="row g-3 form-container  container-sm">
 
             
             <div class="form-group col-md-6">
                 <label><b>Product Title</b></label>
-                <input type="text" class="form-control" id="title"  name="title" [(ngModel)]="employee.title" required ngModel />
+                <input type="text" class="form-control" id="title"  name="title" #title="ngModel" [(ngModel)]="employee.title" required ngModel />
+                <div *ngIf="addItem.submitted && title.errors" class="invalid-feedback" >
+                    <div *ngIf="title.errors['required']">Username is required</div>
+                </div>
             </div>
 
-
-
-        
             <br><br>
-
             <div class="form-group col-md-6">
                 <label class="form-label"><b>Description</b></label>
-                <select id="designation" class="form-select" id = "description" >
+                <select class="form-select" id = "desc" name="desc" #description="ngModel" [(ngModel)]="employee.description">
 
                     <option selected disabled value="">Choose...</option>
                     <option>Electronics</option>
@@ -27,12 +26,19 @@
                     <option>Hygiene</option>
                     <option>Drinks</option>
                 </select>
+                <div *ngIf="addItem.submitted && description.errors" class="invalid-feedback">
+                    <div *ngIf="description.errors['required']">Description is required</div>
+                    
+                </div>
             </div>
             <br><br>
 
             <div class="form-group col-md-6">
                 <label><b>Price (in Peso)</b></label>
-                <input type="number" class="form-control" id="price" [(ngModel)]="employee.price" name="price" required ngModel />
+                <input type="number" class="form-control" id="price" #price="ngModel" [(ngModel)]="employee.price" name="price" required ngModel />
+                <div *ngIf="addItem.submitted && price.errors" class="invalid-feedback">
+                    <div *ngIf="price.errors['required']">Price is required</div>
+                </div>
             </div>
 
             
@@ -41,15 +47,22 @@
 
             <div class="form-group col-md-3">
                 <label><b>Quantity</b></label>
-                <input type="number" class="form-control" id="quantity" [(ngModel)]="employee.quantity" name="quantity" required ngModel />
+                <input type="number" class="form-control" id="quantity" #quantity="ngModel" [(ngModel)]="employee.quantity" name="quantity" required ngModel />
+                <div *ngIf="addItem.submitted && quantity.errors" class="invalid-feedback">
+                    <div *ngIf="quantity.errors['required']">Quantity is required</div>
+                </div>
             </div>
 
             <br><br><br><br>
 
             <div class="form-group col-md-3">
                 <label><b>Image</b></label>
-                <input type="text"  class="form-control" id="image" [(ngModel)]="employee.image"
+                <input type="text"  class="form-control" id="image" #image="ngModel" [(ngModel)]="employee.image"
                        name="image" required #fileInput>
+
+                       <div *ngIf="addItem.submitted && image.errors" class="invalid-feedback">
+                        <div *ngIf="image.errors['required']">Image is required</div>
+                    </div>
             </div>
 
 

@@ -56,6 +56,8 @@ export class AddEmployeeComponent //implements OnInit//
         console.log(response);
         this.router.navigate(['/show-all-employees']);
       });
+    } else {
+      alert('Please fill the form correctly');
     }
   }
 

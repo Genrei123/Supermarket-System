@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 
 export class Employee {
     id!: number;
+    username!: string;
     title!: string;
     description!: string;;
     price!: string;;

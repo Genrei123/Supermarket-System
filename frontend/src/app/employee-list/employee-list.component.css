@@ -1,8 +1,13 @@
+img {
+    min-height: 100px;
+    min-width: 100px;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
     margin: 20px auto;
-    max-width: 1920px; 
+    max-width: auto; 
     padding: 60px;
 }
 

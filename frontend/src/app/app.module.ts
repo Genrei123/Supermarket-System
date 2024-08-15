@@ -27,6 +27,10 @@ import { AuthInterceptor } from './_auth/auth.interceptor';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ItemService } from './employee-list/items.service';
+import { BuyComponent } from './buy/buy.component';
+
+
 
 
 
@@ -45,7 +49,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HeaderComponent,
     RegisterComponent
          ,CartComponent,
-         CheckoutComponent
+         CheckoutComponent,
+         BuyComponent
   ],
   imports: [
     BrowserModule,
